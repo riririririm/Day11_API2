@@ -14,12 +14,27 @@ public class MemberAdd {
 		try {
 			writer = new FileWriter(file,false);
 
+			writer.write("start\r\n");
 			for (Person p : info) {
-				writer.write(p.getGname() + "-");
-				writer.write(p.getName() + "-");
-				writer.write(p.getAge() + "-");
-				writer.write(p.getPosition() + "-");
-				writer.write(p.getAgency() + "\r\n");
+//				writer.write(p.getGname() + "-");
+//				writer.write(p.getName() + "-");
+//				writer.write(p.getAge() + "-");
+//				writer.write(p.getPosition() + "-");
+//				writer.write(p.getAgency() + "\r\n");
+//				writer.flush();
+				StringBuffer sb = new StringBuffer();
+				sb.append(p.getGname());
+				sb.append("-");
+				sb.append(p.getName());
+				sb.append("-");
+				sb.append(p.getAge());
+				sb.append("-");
+				sb.append(p.getPosition());
+				sb.append("-");
+				sb.append(p.getAgency());
+				sb.append("\r\n");
+				
+				writer.write(sb.toString());
 				writer.flush();
 			}
 			System.out.println("백업완료");
