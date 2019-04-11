@@ -25,7 +25,7 @@ public class ServerMenu {
 		while((menu=br.readLine())!=null) {
 			 lunch_dinner.add(menu);
 		}
-		
+		br.close();
 		return lunch_dinner;
 	}
 	
